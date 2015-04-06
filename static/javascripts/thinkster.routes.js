@@ -10,19 +10,21 @@
     $routeProvider.when('/', {
   controller: 'IndexController',
   controllerAs: 'vm',
-  templateUrl: '/static/templates/layout/index.html'
-}).when('/+:username', {
-  controller: 'ProfileController',
-  controllerAs: 'vm',
-  templateUrl: '/static/templates/profiles/profile.html'
-}).when('/register', {
+  templateUrl: '/static/templates/layout/index.html'})
+
+    .when('/register', {
       controller: 'RegisterController', 
       controllerAs: 'vm',
-      templateUrl: '/static/templates/authentication/register.html'
-    }).when('/login',{
-      controller: 'LoginController',
+      templateUrl: '/static/templates/authentication/register.html'})
+    .when('/login',{
+  controller: 'LoginController',
+  controllerAs: 'vm',
+  templateUrl: '/static/templates/authentication/login.html'
+  })
+    .when('/+:username', {
+      controller: 'ProfileController',
       controllerAs: 'vm',
-      templateUrl: '/static/templates/authentication/login.html'
-      }).otherwise('/');
+      templateUrl: '/static/templates/profiles/profile.html'})
+.otherwise('/');
   }
 })();

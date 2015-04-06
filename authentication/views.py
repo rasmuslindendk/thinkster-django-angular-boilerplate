@@ -66,7 +66,6 @@ class LoginView(views.APIView):
                 'message': 'Username/password combination invalid.'
             }, status=status.HTTP_401_UNAUTHORIZED)
         
-        
 class LogoutView(views.APIView):
     permissions = (permissions.IsAuthenticated,)
     
